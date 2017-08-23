@@ -24,7 +24,7 @@ repositories {
 
 Then, add the library dependency:
 ```gradle
-compile 'com.github.rakshakhegde:stepper-indicator:1.0.0'
+compile 'com.github.rakshakhegde:stepper-indicator:0.1-alpha'
 ```
 
 Now go do some awesome stuff!
