@@ -354,7 +354,6 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
     private CharSequence[] labels;
     private boolean showLabels;
     private float labelMarginTop;
-    private float labelSize;
     private StaticLayout[] labelLayouts;
     private float maxLabelHeight;
 
@@ -623,7 +622,7 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
         labelPaint.setTextAlign(Paint.Align.CENTER);
 
         float defaultLabelSize = resources.getDimension(R.dimen.stpi_default_label_size);
-        labelSize = a.getDimension(R.styleable.StepperIndicator_stpi_labelSize, defaultLabelSize);
+        float labelSize = a.getDimension(R.styleable.StepperIndicator_stpi_labelSize, defaultLabelSize);
         labelPaint.setTextSize(labelSize);
 
         float defaultLabelMarginTop = resources.getDimension(R.dimen.stpi_default_label_margin_top);
@@ -1296,6 +1295,12 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
 
     public void setLabelColor(int color) {
         labelPaint.setColor(color);
+        requestLayout();
+        invalidate();
+    }
+
+    public void setLabelSize(float textSize) {
+        labelPaint.setTextSize(textSize);
         requestLayout();
         invalidate();
     }

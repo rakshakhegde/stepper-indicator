@@ -23,4 +23,16 @@
         android:layout_marginTop="32dp"
         app:stpi_labels="@array/stepLabels"/>
 
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/remixerButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		android:src="@drawable/ic_edit"
+		app:backgroundTint="#333"
+		app:fabSize="normal"
+		android:layout_margin="16dp"/>
+
 </RelativeLayout>
