@@ -9,7 +9,7 @@
 Sample
 ----------------
 
-You can checkout the [Sample Application](https://play.google.com/store/apps/details?id=com.badoualy.stepperindicator.sample) on the Play Store
+You can checkout the [Sample Application](https://play.google.com/store/apps/details?id=com.rakshakhegde.stepperindicator.sample) on the Play Store
 
 Setup
 ----------------
@@ -24,7 +24,7 @@ repositories {
 
 Then, add the library dependency:
 ```gradle
-compile 'com.github.badoualy:stepper-indicator:1.0.7'
+compile 'com.github.rakshakhegde:stepper-indicator:1.0.0'
 ```
 
 Now go do some awesome stuff!
@@ -55,6 +55,9 @@ Attributes:
 | stpi_lineStrokeWidth   | width of the line stroke                            | 2dp             |
 | stpi_lineMargin        | margin at each side of the line                     | 5dp             |
 | stpi_showDoneIcon      | show the done check icon or not                     | true            |
+| stpi_showStepNumberInstead | display text number for each step instead of bullets | false       |
+| stpi_useBottomIndicator | display the indicator for the current step at the bottom instead of inside bullet | false |
+| stpi_useBottomIndicatorWithStepColors | use the same color for the bottom indicator as the step color | false |
 
 ```java
 indicator.setViewPager(pager);
@@ -70,7 +73,7 @@ Licence
 ```
 The MIT License (MIT)
 
-Copyright (c) 2016 Yannick Badoual
+Copyright (c) 2016 Rakshak Hegde
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
