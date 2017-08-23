@@ -8,8 +8,8 @@ android {
         applicationId "com.rakshakhegde.stepperindicator.sample"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 105
-        versionName "1.1.0"
+        versionCode 1
+        versionName "0.1-alpha"
     }
     buildTypes {
         release {
@@ -23,6 +23,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:26.0.1'
+    compile 'com.android.support:design:26.0.1'
     compile 'com.github.material-foundation.material-remixer-android:remixer:1.0'
     annotationProcessor 'com.github.material-foundation.material-remixer-android:remixer_annotation:1.0'
 
