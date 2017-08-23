@@ -1,4 +1,4 @@
-<manifest package="com.badoualy.stepperindicator.sample"
+<manifest package="com.rakshakhegde.stepperindicator.sample"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -8,7 +8,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.rakshakhegde.stepperindicator.sample.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

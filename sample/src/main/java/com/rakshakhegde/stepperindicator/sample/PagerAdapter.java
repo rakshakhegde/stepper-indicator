@@ -1,4 +1,4 @@
-package com.badoualy.stepperindicator.sample;
+package com.rakshakhegde.stepperindicator.sample;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

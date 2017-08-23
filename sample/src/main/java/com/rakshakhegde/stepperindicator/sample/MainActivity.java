@@ -1,11 +1,11 @@
-package com.badoualy.stepperindicator.sample;
+package com.rakshakhegde.stepperindicator.sample;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.badoualy.stepperindicator.StepperIndicator;
+import com.rakshakhegde.stepperindicator.StepperIndicator;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.badoualy.stepperindicator.sample;
+package com.rakshakhegde.stepperindicator.sample;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

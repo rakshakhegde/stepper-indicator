@@ -1,4 +1,4 @@
-package com.badoualy.stepperindicator;
+package com.rakshakhegde.stepperindicator;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

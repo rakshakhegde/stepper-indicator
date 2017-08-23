@@ -1,4 +1,4 @@
-package com.badoualy.stepperindicator;
+package com.rakshakhegde.stepperindicator;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
