@@ -9,7 +9,7 @@
 Sample
 ----------------
 
-You can checkout the [Sample Application](https://play.google.com/store/apps/details?id=com.badoualy.stepperindicator.sample) on the Play Store
+You can checkout the [Sample Application](https://play.google.com/store/apps/details?id=com.rakshakhegde.stepperindicator.sample) on the Play Store
 
 Setup
 ----------------
@@ -24,7 +24,7 @@ repositories {
 
 Then, add the library dependency:
 ```gradle
-compile 'com.github.badoualy:stepper-indicator:1.0.7'
+compile 'com.github.rakshakhegde:stepper-indicator:1.0.0'
 ```
 
 Now go do some awesome stuff!
@@ -41,20 +41,142 @@ Usage
 
 Attributes:
 
-| Name                   | Description                                         | Default value   |
-|------------------------|-----------------------------------------------------|-----------------|
-| stpi_animDuration      | duration of the line tracing animation              | 250 ms          |
-| stpi_stepCount         | number of pages/steps                               |                 |
-| stpi_circleColor       | color of the stroke circle                          | #b3bdc2 (grey)  |
-| stpi_circleRadius      | radius of the circle                                | 10dp            |
-| stpi_circleStrokeWidth | width of circle's radius                            | 4dp             |
-| stpi_indicatorColor    | color for the current page indicator                | #00b47c (green) |
-| stpi_indicatorRadius   | radius for the circle of the current page indicator | 4dp             |
-| stpi_lineColor         | color of the line between indicators                | #b3bdc2 (grey)  |
-| stpi_lineDoneColor     | color of a line when step is done                   | #00b47c (green) |
-| stpi_lineStrokeWidth   | width of the line stroke                            | 2dp             |
-| stpi_lineMargin        | margin at each side of the line                     | 5dp             |
-| stpi_showDoneIcon      | show the done check icon or not                     | true            |
+<table summary="Attributes"><thead>
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+	<th>Default value</th>
+	</tr>
+</thead><tbody>
+<tr>
+	<td>stpi_animDuration</td>
+	<td>duration of the line tracing animation</td>
+	<td>250 ms</td>
+	</tr>
+<tr>
+	<td>stpi_stepCount</td>
+	<td>number of pages/steps</td>
+	<td></td>
+	</tr>
+<tr>
+	<td>stpi_circleColor</td>
+	<td>color of the stroke circle</td>
+	<td>#b3bdc2 (grey)</td>
+	</tr>
+<tr>
+	<td>stpi_circleRadius</td>
+	<td>radius of the circle</td>
+	<td>10dp</td>
+	</tr>
+<tr>
+	<td>stpi_circleStrokeWidth</td>
+	<td>width of circle's radius</td>
+	<td>4dp</td>
+	</tr>
+<tr>
+	<td>stpi_indicatorColor</td>
+	<td>color for the current page indicator</td>
+	<td>#00b47c (green)</td>
+	</tr>
+<tr>
+	<td>stpi_indicatorRadius</td>
+	<td>radius for the circle of the current page indicator</td>
+	<td>4dp</td>
+	</tr>
+<tr>
+	<td>stpi_lineColor</td>
+	<td>color of the line between indicators</td>
+	<td>#b3bdc2 (grey)</td>
+	</tr>
+<tr>
+	<td>stpi_lineDoneColor</td>
+	<td>color of a line when step is done</td>
+	<td>#00b47c (green)</td>
+	</tr>
+<tr>
+	<td>stpi_lineStrokeWidth</td>
+	<td>width of the line stroke</td>
+	<td>2dp</td>
+	</tr>
+<tr>
+	<td>stpi_lineMargin</td>
+	<td>margin at each side of the line</td>
+	<td>5dp</td>
+	</tr>
+<tr>
+	<td>stpi_showDoneIcon</td>
+	<td>show the done check icon or not</td>
+	<td>true</td>
+	</tr>
+<tr>
+	<td>stpi_showStepNumberInstead</td>
+	<td>display text number for each step instead of bullets</td>
+	<td>false</td>
+	</tr>
+<tr>
+	<td>stpi_useBottomIndicator</td>
+	<td>display the indicator for the current step at the bottom instead of inside bullet</td>
+	<td>false</td>
+	</tr>
+<tr>
+	<td>stpi_useBottomIndicatorWithStepColors</td>
+	<td>use the same color for the bottom indicator as the step color</td>
+	<td>false</td>
+	</tr>
+<tr>
+	<td>stpi_bottomIndicatorHeight</td>
+	<td>set the height for the bottom indicator component</td>
+	<td>3dp</td>
+	</tr>
+<tr>
+	<td>stpi_bottomIndicatorWidth</td>
+	<td>set the width for the bottom indicator component</td>
+	<td>50dp</td>
+	</tr>
+<tr>
+	<td>stpi_bottomIndicatorMarginTop</td>
+	<td>set the top margin for the bottom indicator component</td>
+	<td>10dp</td>
+	</tr>
+<tr>
+	<td>stpi_stepsCircleColors</td>
+	<td>use multiple colors for each step (array of colors with the size at least the same size as the stpi_stepCount
+	value)</td>
+	<td></td>
+	</tr>
+<tr>
+	<td>stpi_stepsIndicatorColors</td>
+	<td>use multiple colors for each step indicator (array of colors with the size at least the same size as the
+	stpi_stepCount value)</td>
+	<td></td>
+	</tr>
+<tr>
+	<td>stpi_labels</td>
+	<td>supply an array of strings to show labels for every step indicator</td>
+	<td></td>
+	</tr>
+<tr>
+	<td>stpi_showLabels</td>
+	<td>Show labels for each step indicator. Useful for timelines or checkpoints.</td>
+	<td>false</td>
+	</tr>
+<tr>
+	<td>stpi_labelMarginTop</td>
+	<td>Top margin for the labels</td>
+	<td>2dp</td>
+	</tr>
+<tr>
+	<td>stpi_labelSize</td>
+	<td>Size for the labels</td>
+	<td>12sp</td>
+	</tr>
+<tr>
+	<td>stpi_labelColor</td>
+	<td>Color for the labels</td>
+	<td>android:textColorSecondary defined in your project</td>
+	</tr>
+</tbody></table>
+
 
 ```java
 indicator.setViewPager(pager);
@@ -70,7 +192,7 @@ Licence
 ```
 The MIT License (MIT)
 
-Copyright (c) 2016 Yannick Badoual
+Copyright (c) 2016 Rakshak Hegde
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
