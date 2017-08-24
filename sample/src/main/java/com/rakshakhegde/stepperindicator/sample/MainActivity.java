@@ -5,9 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.TypedValue;
 
 import com.google.android.libraries.remixer.Remixer;
+import com.google.android.libraries.remixer.annotation.ColorListVariableMethod;
 import com.google.android.libraries.remixer.annotation.RangeVariableMethod;
 import com.google.android.libraries.remixer.annotation.RemixerBinder;
 import com.google.android.libraries.remixer.storage.LocalStorage;
@@ -51,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
     @RangeVariableMethod(minValue = 6, maxValue = 70, initialValue = 20)
     public void setLabelSize(Float fontSize) {
         indicator.setLabelSize(fontSize);
+    }
+
+    @ColorListVariableMethod(limitedToValues = {0xFF00b47c, 0xFF3f51b5, 0xFFf44336})
+    public void setIndicatorColor(Integer indicatorColor) {
+        indicator.setIndicatorColor(indicatorColor);
+    }
+
+    @ColorListVariableMethod(limitedToValues = {0xFF00b47c, 0xFF3f51b5, 0xFFf44336})
+    public void setLineDoneColor(Integer lineDoneColor) {
+        indicator.setLineDoneColor(lineDoneColor);
     }
 
 }

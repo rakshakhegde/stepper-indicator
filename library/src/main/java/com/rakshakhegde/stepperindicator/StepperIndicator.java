@@ -1305,6 +1305,18 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
         invalidate();
     }
 
+    public void setIndicatorColor(int indicatorColor) {
+        indicatorPaint.setColor(indicatorColor);
+        requestLayout();
+        invalidate();
+    }
+
+    public void setLineDoneColor(int lineDoneColor) {
+        lineDonePaint.setColor(lineDoneColor);
+        requestLayout();
+        invalidate();
+    }
+
     /**
      * Shows the labels if true is passed. Else hides them.
      *
