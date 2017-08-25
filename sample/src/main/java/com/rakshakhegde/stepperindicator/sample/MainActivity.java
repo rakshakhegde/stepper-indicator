@@ -1,5 +1,6 @@
 package com.rakshakhegde.stepperindicator.sample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.libraries.remixer.Remixer;
+import com.google.android.libraries.remixer.annotation.BooleanVariableMethod;
 import com.google.android.libraries.remixer.annotation.ColorListVariableMethod;
 import com.google.android.libraries.remixer.annotation.RangeVariableMethod;
 import com.google.android.libraries.remixer.annotation.RemixerBinder;
@@ -53,6 +55,21 @@ public class MainActivity extends AppCompatActivity {
         indicator.setLabelSize(fontSize);
     }
 
+    @BooleanVariableMethod(initialValue = true)
+    public void showLabels(Boolean showLabels) {
+        indicator.showLabels(showLabels);
+    }
+
+    @BooleanVariableMethod
+    public void showStepNumberInstead(Boolean showStepNumberInstead) {
+        indicator.showStepNumberInstead(showStepNumberInstead);
+    }
+
+    @BooleanVariableMethod
+    public void useBottomIndicator(Boolean useBottomIndicator) {
+        indicator.useBottomIndicator(useBottomIndicator);
+    }
+
     @ColorListVariableMethod(limitedToValues = {0xFF00b47c, 0xFF3f51b5, 0xFFf44336})
     public void setIndicatorColor(Integer indicatorColor) {
         indicator.setIndicatorColor(indicatorColor);
@@ -61,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
     @ColorListVariableMethod(limitedToValues = {0xFF00b47c, 0xFF3f51b5, 0xFFf44336})
     public void setLineDoneColor(Integer lineDoneColor) {
         indicator.setLineDoneColor(lineDoneColor);
+    }
+
+    @ColorListVariableMethod(limitedToValues = {Color.BLACK, Color.WHITE, 0xFF00b47c, 0xFF3f51b5, 0xFFf44336})
+    public void setLabelColor(Integer labelColor) {
+        indicator.setLabelColor(labelColor);
     }
 
 }

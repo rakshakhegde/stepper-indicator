@@ -468,19 +468,19 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
         int defaultLineDoneColor = defaultPrimaryColor;
 
         /* Customize the widget based on the properties set on XML, or use default if not provided */
-        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.StepperIndicator, defStyleAttr, 0);
+        final TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.StepperIndicator, defStyleAttr, 0);
 
         circlePaint = new Paint();
         circlePaint.setStrokeWidth(
-                a.getDimension(R.styleable.StepperIndicator_stpi_circleStrokeWidth, defaultCircleStrokeWidth));
+                typedArray.getDimension(R.styleable.StepperIndicator_stpi_circleStrokeWidth, defaultCircleStrokeWidth));
         circlePaint.setStyle(Paint.Style.STROKE);
-        circlePaint.setColor(a.getColor(R.styleable.StepperIndicator_stpi_circleColor, defaultCircleColor));
+        circlePaint.setColor(typedArray.getColor(R.styleable.StepperIndicator_stpi_circleColor, defaultCircleColor));
         circlePaint.setAntiAlias(true);
 
         // Call this as early as possible as other properties are configured based on the number of steps
-        setStepCount(a.getInteger(R.styleable.StepperIndicator_stpi_stepCount, 2));
+        setStepCount(typedArray.getInteger(R.styleable.StepperIndicator_stpi_stepCount, 2));
 
-        final int stepsCircleColorsResId = a.getResourceId(R.styleable.StepperIndicator_stpi_stepsCircleColors, 0);
+        final int stepsCircleColorsResId = typedArray.getResourceId(R.styleable.StepperIndicator_stpi_stepsCircleColors, 0);
         if (stepsCircleColorsResId != 0) {
             stepsCirclePaintList = new ArrayList<>(stepCount);
 
@@ -511,16 +511,16 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
 
         indicatorPaint = new Paint(circlePaint);
         indicatorPaint.setStyle(Paint.Style.FILL);
-        indicatorPaint.setColor(a.getColor(R.styleable.StepperIndicator_stpi_indicatorColor, defaultIndicatorColor));
+        indicatorPaint.setColor(typedArray.getColor(R.styleable.StepperIndicator_stpi_indicatorColor, defaultIndicatorColor));
         indicatorPaint.setAntiAlias(true);
 
         stepTextNumberPaint = new Paint(indicatorPaint);
         stepTextNumberPaint.setTextSize(getResources().getDimension(R.dimen.stpi_default_text_size));
 
-        showStepTextNumber = a.getBoolean(R.styleable.StepperIndicator_stpi_showStepNumberInstead, false);
+        showStepTextNumber = typedArray.getBoolean(R.styleable.StepperIndicator_stpi_showStepNumberInstead, false);
 
         // Get the resource from the context style properties
-        final int stepsIndicatorColorsResId = a
+        final int stepsIndicatorColorsResId = typedArray
                 .getResourceId(R.styleable.StepperIndicator_stpi_stepsIndicatorColors, 0);
         if (stepsIndicatorColorsResId != 0) {
             // init the list of colors with the same size as the number of steps
@@ -567,72 +567,70 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
 
         linePaint = new Paint();
         linePaint.setStrokeWidth(
-                a.getDimension(R.styleable.StepperIndicator_stpi_lineStrokeWidth, defaultLineStrokeWidth));
+                typedArray.getDimension(R.styleable.StepperIndicator_stpi_lineStrokeWidth, defaultLineStrokeWidth));
         linePaint.setStrokeCap(Paint.Cap.ROUND);
         linePaint.setStyle(Paint.Style.STROKE);
-        linePaint.setColor(a.getColor(R.styleable.StepperIndicator_stpi_lineColor, defaultLineColor));
+        linePaint.setColor(typedArray.getColor(R.styleable.StepperIndicator_stpi_lineColor, defaultLineColor));
         linePaint.setAntiAlias(true);
 
         lineDonePaint = new Paint(linePaint);
-        lineDonePaint.setColor(a.getColor(R.styleable.StepperIndicator_stpi_lineDoneColor, defaultLineDoneColor));
+        lineDonePaint.setColor(typedArray.getColor(R.styleable.StepperIndicator_stpi_lineDoneColor, defaultLineDoneColor));
 
         lineDoneAnimatedPaint = new Paint(lineDonePaint);
 
         // Check if we should use the bottom indicator instead of the bullet one
-        useBottomIndicator = a.getBoolean(R.styleable.StepperIndicator_stpi_useBottomIndicator, false);
-        if (useBottomIndicator) {
-            // Get the default height(stroke width) for the bottom indicator
-            float defaultHeight = resources.getDimension(R.dimen.stpi_default_bottom_indicator_height);
+        useBottomIndicator = typedArray.getBoolean(R.styleable.StepperIndicator_stpi_useBottomIndicator, false);
 
-            bottomIndicatorHeight = a
-                    .getDimension(R.styleable.StepperIndicator_stpi_bottomIndicatorHeight, defaultHeight);
+        // Get the default height(stroke width) for the bottom indicator
+        float defaultHeight = resources.getDimension(R.dimen.stpi_default_bottom_indicator_height);
+        bottomIndicatorHeight = typedArray
+                .getDimension(R.styleable.StepperIndicator_stpi_bottomIndicatorHeight, defaultHeight);
 
-            if (bottomIndicatorHeight <= 0) {
-                Log.d(TAG, "init: Invalid indicator height, disabling bottom indicator feature! Please provide " +
-                        "a value greater than 0.");
-                useBottomIndicator = false;
-            }
-
-            // Get the default width for the bottom indicator
-            float defaultWidth = resources.getDimension(R.dimen.stpi_default_bottom_indicator_width);
-            bottomIndicatorWidth = a.getDimension(R.styleable.StepperIndicator_stpi_bottomIndicatorWidth, defaultWidth);
-
-            // Get the default top margin for the bottom indicator
-            float defaultTopMargin = resources.getDimension(R.dimen.stpi_default_bottom_indicator_margin_top);
-            bottomIndicatorMarginTop = a
-                    .getDimension(R.styleable.StepperIndicator_stpi_bottomIndicatorMarginTop, defaultTopMargin);
-
-            useBottomIndicatorWithStepColors = a
-                    .getBoolean(R.styleable.StepperIndicator_stpi_useBottomIndicatorWithStepColors, false);
+        if (bottomIndicatorHeight <= 0) {
+            Log.d(TAG, "init: Invalid indicator height, disabling bottom indicator feature! Please provide " +
+                    "a value greater than 0.");
+            useBottomIndicator = false;
         }
 
-        circleRadius = a.getDimension(R.styleable.StepperIndicator_stpi_circleRadius, defaultCircleRadius);
+        // Get the default width for the bottom indicator
+        float defaultWidth = resources.getDimension(R.dimen.stpi_default_bottom_indicator_width);
+        bottomIndicatorWidth = typedArray.getDimension(R.styleable.StepperIndicator_stpi_bottomIndicatorWidth, defaultWidth);
+
+        // Get the default top margin for the bottom indicator
+        float defaultTopMargin = resources.getDimension(R.dimen.stpi_default_bottom_indicator_margin_top);
+        bottomIndicatorMarginTop = typedArray
+                .getDimension(R.styleable.StepperIndicator_stpi_bottomIndicatorMarginTop, defaultTopMargin);
+
+        useBottomIndicatorWithStepColors = typedArray
+                .getBoolean(R.styleable.StepperIndicator_stpi_useBottomIndicatorWithStepColors, false);
+
+        circleRadius = typedArray.getDimension(R.styleable.StepperIndicator_stpi_circleRadius, defaultCircleRadius);
         checkRadius = circleRadius + circlePaint.getStrokeWidth() / 2f;
-        indicatorRadius = a.getDimension(R.styleable.StepperIndicator_stpi_indicatorRadius, defaultIndicatorRadius);
+        indicatorRadius = typedArray.getDimension(R.styleable.StepperIndicator_stpi_indicatorRadius, defaultIndicatorRadius);
         animIndicatorRadius = indicatorRadius;
         animCheckRadius = checkRadius;
-        lineMargin = a.getDimension(R.styleable.StepperIndicator_stpi_lineMargin, defaultLineMargin);
+        lineMargin = typedArray.getDimension(R.styleable.StepperIndicator_stpi_lineMargin, defaultLineMargin);
 
-        animDuration = a.getInteger(R.styleable.StepperIndicator_stpi_animDuration, DEFAULT_ANIMATION_DURATION);
-        showDoneIcon = a.getBoolean(R.styleable.StepperIndicator_stpi_showDoneIcon, true);
-        doneIcon = a.getDrawable(R.styleable.StepperIndicator_stpi_doneIconDrawable);
+        animDuration = typedArray.getInteger(R.styleable.StepperIndicator_stpi_animDuration, DEFAULT_ANIMATION_DURATION);
+        showDoneIcon = typedArray.getBoolean(R.styleable.StepperIndicator_stpi_showDoneIcon, true);
+        doneIcon = typedArray.getDrawable(R.styleable.StepperIndicator_stpi_doneIconDrawable);
 
         // Labels Configuration
         labelPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         labelPaint.setTextAlign(Paint.Align.CENTER);
 
         float defaultLabelSize = resources.getDimension(R.dimen.stpi_default_label_size);
-        float labelSize = a.getDimension(R.styleable.StepperIndicator_stpi_labelSize, defaultLabelSize);
+        float labelSize = typedArray.getDimension(R.styleable.StepperIndicator_stpi_labelSize, defaultLabelSize);
         labelPaint.setTextSize(labelSize);
 
         float defaultLabelMarginTop = resources.getDimension(R.dimen.stpi_default_label_margin_top);
-        labelMarginTop = a.getDimension(R.styleable.StepperIndicator_stpi_labelMarginTop, defaultLabelMarginTop);
+        labelMarginTop = typedArray.getDimension(R.styleable.StepperIndicator_stpi_labelMarginTop, defaultLabelMarginTop);
 
-        showLabels(a.getBoolean(R.styleable.StepperIndicator_stpi_showLabels, false));
-        setLabels(a.getTextArray(R.styleable.StepperIndicator_stpi_labels));
+        showLabels(typedArray.getBoolean(R.styleable.StepperIndicator_stpi_showLabels, false));
+        setLabels(typedArray.getTextArray(R.styleable.StepperIndicator_stpi_labels));
 
-        if (a.hasValue(R.styleable.StepperIndicator_stpi_labelColor)) {
-            setLabelColor(a.getColor(R.styleable.StepperIndicator_stpi_labelColor, 0));
+        if (typedArray.hasValue(R.styleable.StepperIndicator_stpi_labelColor)) {
+            setLabelColor(typedArray.getColor(R.styleable.StepperIndicator_stpi_labelColor, 0));
         } else {
             setLabelColor(getTextColorSecondary(getContext()));
         }
@@ -641,11 +639,11 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
             labels = new CharSequence[]{"First", "Second", "Third", "Fourth", "Fifth"};
         }
 
-        if (!a.hasValue(R.styleable.StepperIndicator_stpi_stepCount) && labels != null) {
+        if (!typedArray.hasValue(R.styleable.StepperIndicator_stpi_stepCount) && labels != null) {
             setStepCount(labels.length);
         }
 
-        a.recycle();
+        typedArray.recycle();
 
         if (showDoneIcon && doneIcon == null) {
             doneIcon = ContextCompat.getDrawable(context, R.drawable.ic_done_white_18dp);
@@ -1307,12 +1305,26 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
 
     public void setIndicatorColor(int indicatorColor) {
         indicatorPaint.setColor(indicatorColor);
+        stepTextNumberPaint.setColor(indicatorColor);
+        requestLayout();
+        invalidate();
+    }
+
+    public void setLineColor(int lineColor) {
+        linePaint.setColor(lineColor);
         requestLayout();
         invalidate();
     }
 
     public void setLineDoneColor(int lineDoneColor) {
         lineDonePaint.setColor(lineDoneColor);
+        lineDoneAnimatedPaint.setColor(lineDoneColor);
+        requestLayout();
+        invalidate();
+    }
+
+    public void useBottomIndicator(boolean useBottomIndicator) {
+        this.useBottomIndicator = useBottomIndicator;
         requestLayout();
         invalidate();
     }
@@ -1324,6 +1336,12 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
      */
     public void showLabels(boolean show) {
         showLabels = show;
+        requestLayout();
+        invalidate();
+    }
+
+    public void showStepNumberInstead(boolean showStepNumberInstead) {
+        this.showStepTextNumber = showStepNumberInstead;
         requestLayout();
         invalidate();
     }
