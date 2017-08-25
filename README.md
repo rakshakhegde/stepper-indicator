@@ -1,7 +1,7 @@
 [![Release](https://jitpack.io/v/badoualy/stepper-indicator.svg)](https://jitpack.io/#badoualy/stepper-indicator)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-stepper--indicator-green.svg?style=true)](https://android-arsenal.com/details/1/3711)
 
-# ![](https://github.com/badoualy/stepper-indicator/blob/master/sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator
+# ![](https://github.com/badoualy/stepper-indicator/blob/master/sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator v2
 > ### Designed by the awesome https://dribbble.com/LeslyPyram :)
 
 <img src="https://github.com/badoualy/stepper-indicator/blob/master/ART/screen.gif" width="300">
@@ -24,7 +24,7 @@ repositories {
 
 Then, add the library dependency:
 ```gradle
-compile 'com.github.rakshakhegde:stepper-indicator:0.1-alpha'
+compile 'com.github.rakshakhegde:stepper-indicator:2.0.0-alpha'
 ```
 
 Now go do some awesome stuff!
@@ -33,7 +33,7 @@ Usage
 ----------------
 
 ```xml
-<com.badoualy.stepperindicator.StepperIndicator
+<com.rakshakhegde.stepperindicator.StepperIndicator
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:stpi_stepCount="5"/>
