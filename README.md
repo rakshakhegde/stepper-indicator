@@ -1,7 +1,7 @@
-[![Release](https://jitpack.io/v/badoualy/stepper-indicator.svg)](https://jitpack.io/#badoualy/stepper-indicator)
+[![Release](https://jitpack.io/v/rakshakhegde/stepper-indicator.svg)](https://jitpack.io/#rakshakhegde/stepper-indicator)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-stepper--indicator-green.svg?style=true)](https://android-arsenal.com/details/1/3711)
 
-# ![](https://github.com/badoualy/stepper-indicator/blob/master/sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator v2
+# ![](https://github.com/rakshakhegde/stepper-indicator/blob/master/sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator v2
 > ### Designed by the awesome https://dribbble.com/LeslyPyram :)
 
 <img src="https://github.com/badoualy/stepper-indicator/blob/master/ART/screen.gif" width="300">
