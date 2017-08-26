@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Stepper Indicator</string>
+    <string name="app_name">Stepper Indicator v2</string>
 
     <string-array name="stepLabels">
         <item>Approval</item>
