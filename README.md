@@ -1,5 +1,5 @@
 <p align="center">
-<img alt="flavors" src="ART/collage.jpg" width="900"></img>
+<img alt="flavors" src="ART/collage.jpg"></img>
 </p>
 
 # ![launcher icon](sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator v2
@@ -13,7 +13,7 @@
 [![rakshakhegde newsletter](https://img.shields.io/badge/rakshakhegde-newsletter-green.svg)](https://upscri.be/b00b87/)
 
 > ### Designed by the awesome https://dribbble.com/LeslyPyram :)
-> ### Check out the release [**here**](https://github.com/rakshakhegde/stepper-indicator/releases)
+> ### Check out the release and sample apk [**here**](https://github.com/rakshakhegde/stepper-indicator/releases)
 
 <p align="center">
 <img src="ART/step-demo.gif" width="300">
@@ -22,10 +22,6 @@
 <p align="center">
 <img src="ART/remixer-demo.gif" width="300" hspace="200">
 </p>
-
-## Sample
-
-You can checkout the [**Sample Application**](https://play.google.com/store/apps/details?id=com.rakshakhegde.stepperindicator.sample) on the Play Store.
 
 ### Please sign up for my newsletter **[rakshakhegde](https://upscri.be/b00b87/)** 📧
 
