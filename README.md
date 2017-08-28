@@ -5,6 +5,7 @@
 # ![launcher icon](sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator v2
 
 ### Pt 2/3
+> Pt 1/3: https://github.com/rakshakhegde/ObservableFlow
 
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=58897f27fdfc370100e3eece&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/58897f27fdfc370100e3eece/build/latest?branch=master)
 [![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)](https://upscri.be/b00b87/)
