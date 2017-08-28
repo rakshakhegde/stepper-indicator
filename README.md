@@ -14,8 +14,13 @@
 > ### Designed by the awesome https://dribbble.com/LeslyPyram :)
 > ### Check out the release [**here**](https://github.com/rakshakhegde/stepper-indicator/releases)
 
+<p align="center">
 <img src="ART/step-demo.gif" width="300">
+</p>
+<br/>
+<p align="center">
 <img src="ART/remixer-demo.gif" width="300" hspace="200">
+</p>
 
 ## Sample
 
