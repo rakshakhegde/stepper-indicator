@@ -1,15 +1,27 @@
+<p align="center">
+<img alt="flavors" src="ART/collage.jpg" width="900"></img>
+</p>
+
+# ![launcher icon](sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator v2
+
+### Pt 2/3
+
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=58897f27fdfc370100e3eece&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/58897f27fdfc370100e3eece/build/latest?branch=master)
+[![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)](https://upscri.be/b00b87/)
 [![Release](https://jitpack.io/v/rakshakhegde/stepper-indicator.svg)](https://jitpack.io/#rakshakhegde/stepper-indicator)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-stepper--indicator-green.svg?style=true)](https://android-arsenal.com/details/1/3711)
+[![rakshakhegde newsletter](https://img.shields.io/badge/rakshakhegde-newsletter-green.svg)](https://upscri.be/b00b87/)
 
-# ![](https://github.com/rakshakhegde/stepper-indicator/blob/master/sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator v2
 > ### Designed by the awesome https://dribbble.com/LeslyPyram :)
+> ### Check out the release [**here**](https://github.com/rakshakhegde/stepper-indicator/releases)
 
-<img src="https://github.com/badoualy/stepper-indicator/blob/master/ART/screen.gif" width="300">
+<img src="ART/step-demo.gif" width="300">
+<img src="ART/remixer-demo.gif" width="300" hspace="200">
 
-Sample
-----------------
+## Sample
 
-You can checkout the [Sample Application](https://play.google.com/store/apps/details?id=com.rakshakhegde.stepperindicator.sample) on the Play Store
+You can checkout the [**Sample Application**](https://play.google.com/store/apps/details?id=com.rakshakhegde.stepperindicator.sample) on the Play Store.
+
+### Please sign up for my newsletter **[rakshakhegde](https://upscri.be/b00b87/)** 📧
 
 Setup
 ----------------
@@ -187,8 +199,14 @@ indicator.setStepCount(3);
 indicator.setCurrentStep(2);
 ```
 
-Licence
-----------------
+
+## Created & Maintained By
+
+[Rakshak R.Hegde](https://github.com/rakshakhegde) ([@rakshakhegde](https://twitter.com/rakshakhegde)) Wanna contribute to this project? Pull requests welcome ❤️
+
+> **Note:** This project is a part of an ongoing series of open-source projects I'm working on. If you liked my work, please consider following me on **[Twitter @rakshakhegde](https://twitter.com/rakshakhegde)** and **[Github](https://github.com/rakshakhegde)**. Also please **share** this project with fellow developers. I'm also starting a newsletter of my own called **[rakshakhegde 📧](https://upscri.be/b00b87/)**. It would be great if you could fill in your email address and subscribe to my new project announcements, releases or blog posts. Subscribe [**here**](https://upscri.be/b00b87/) :)
+
+## License
 ```
 The MIT License (MIT)
 
