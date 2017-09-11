@@ -1,3 +1,5 @@
+Forked from [badoualy/stepper-indicator](https://github.com/badoualy/stepper-indicator)
+
 <p align="center">
 <img alt="flavors" src="ART/collage.jpg"></img>
 </p>
