@@ -5,7 +5,10 @@
 # ![launcher icon](sample/src/main/res/mipmap-mdpi/ic_launcher.png) Stepper indicator v2
 
 ### Pt 2/3
-> Pt 1/3: https://github.com/rakshakhegde/ObservableFlow
+> Pt 1/3: [ObservableFlow](https://github.com/rakshakhegde/ObservableFlow)
+>
+> Pt 3/3: [SugarPreferences](https://github.com/rakshakhegde/SugarPreferences)
+
 
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=58897f27fdfc370100e3eece&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/58897f27fdfc370100e3eece/build/latest?branch=master)
 [![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)](https://upscri.be/b00b87/)
@@ -14,6 +17,7 @@
 
 > ### Designed by the awesome https://dribbble.com/LeslyPyram :)
 > ### Check out the release and sample apk [**here**](https://github.com/rakshakhegde/stepper-indicator/releases)
+> ### [StepperIndicator + Remixer Medium article here](https://android.jlelse.eu/make-your-android-project-pop-with-remixer-by-google-26366a02f146?source=user_profile---------1----------------)
 
 <p align="center">
 <img src="ART/step-demo.gif" width="300">
