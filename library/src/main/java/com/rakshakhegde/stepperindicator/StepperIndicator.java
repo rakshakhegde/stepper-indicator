@@ -836,7 +836,7 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
             labelLayouts[i] = new StaticLayout(labels[i], labelPaint, gridWidth,
                                                Layout.Alignment.ALIGN_NORMAL, 1, 0, false);
 
-            if (labelMaxLines < Integer.MAX_VALUE && labelLayouts[i].getLineCount() > 1 && Build.VERSION.SDK_INT >= 23) {
+            if (labelMaxLines < Integer.MAX_VALUE && labelLayouts[i].getLineCount() > labelMaxLines && Build.VERSION.SDK_INT >= 23) {
                 // recreate StaticLayout if it needs to be ellipsized
                 labelLayouts[i]= StaticLayout.Builder
                         .obtain(labels[i], 0, labels[i].length(), labelPaint, gridWidth)
