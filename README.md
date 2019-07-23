@@ -195,6 +195,11 @@ Attributes:
 	<td>Color for the labels</td>
 	<td>android:textColorSecondary defined in your project</td>
 	</tr>
+<tr>
+    <td>stpi_labelMaxLines</td>
+    <td>Max number of lines for the labels. Ellipsized at the end if exceeded. Only above SDK 23.</td>
+    <td>infinite</td>
+    </tr>
 </tbody></table>
 
 

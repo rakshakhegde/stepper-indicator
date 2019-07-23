@@ -25,7 +25,9 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.Layout;
 import android.text.StaticLayout;
+import android.text.TextDirectionHeuristics;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -178,6 +180,11 @@ import java.util.Random;
  * <td>stpi_labelColor</td>
  * <td>Color for the labels</td>
  * <td>android:textColorSecondary defined in your project</td>
+ * </tr>
+ * <tr>
+ * <td>stpi_labelMaxLines</td>
+ * <td>Max number of lines for the labels. Ellipsized at the end if exceeded. Only above SDK 23.</td>
+ * <td>infinite</td>
  * </tr>
  * </tbody></table>
  * <p>
@@ -354,6 +361,7 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
     private CharSequence[] labels;
     private boolean showLabels;
     private float labelMarginTop;
+    private int labelMaxLines;
     private StaticLayout[] labelLayouts;
     private float maxLabelHeight;
 
@@ -626,6 +634,8 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
         float defaultLabelMarginTop = resources.getDimension(R.dimen.stpi_default_label_margin_top);
         labelMarginTop = typedArray.getDimension(R.styleable.StepperIndicator_stpi_labelMarginTop, defaultLabelMarginTop);
 
+        labelMaxLines = typedArray.getInt(R.styleable.StepperIndicator_stpi_labelMaxLines, Integer.MAX_VALUE);
+
         showLabels(typedArray.getBoolean(R.styleable.StepperIndicator_stpi_showLabels, false));
         setLabels(typedArray.getTextArray(R.styleable.StepperIndicator_stpi_labels));
 
@@ -825,6 +835,17 @@ public class StepperIndicator extends View implements ViewPager.OnPageChangeList
 
             labelLayouts[i] = new StaticLayout(labels[i], labelPaint, gridWidth,
                                                Layout.Alignment.ALIGN_NORMAL, 1, 0, false);
+
+            if (labelMaxLines < Integer.MAX_VALUE && labelLayouts[i].getLineCount() > labelMaxLines && Build.VERSION.SDK_INT >= 23) {
+                // recreate StaticLayout if it needs to be ellipsized
+                labelLayouts[i]= StaticLayout.Builder
+                        .obtain(labels[i], 0, labels[i].length(), labelPaint, gridWidth)
+                        .setMaxLines(labelMaxLines)
+                        .setLineSpacing(0, 1)
+                        .setIncludePad(false)
+                        .setEllipsize(TextUtils.TruncateAt.END)
+                        .build();
+            }
             maxLabelHeight = Math.max(maxLabelHeight, labelLayouts[i].getLineCount() * labelSingleLineHeight);
         }
     }
